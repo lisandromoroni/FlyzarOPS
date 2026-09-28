@@ -1,11 +1,25 @@
-<div align="center">
+# Flyzar Ops
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Aplicación web de operaciones Flyzar. Incluye cálculos de combustible, bitácora de tankering y generación de GENDEC.
 
-  <h1>Built with AI Studio</h2>
+## Desarrollo local
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+Requisitos: Node.js compatible con Vite 8.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+```bash
+npm install
+npm run dev
+```
 
-</div>
+Validaciones disponibles:
+
+```bash
+npm run lint
+npm run build
+```
+
+## Datos y Firebase
+
+Por privacidad, las listas iniciales de pasajeros y tripulantes están vacías. El módulo GENDEC permite cargar datos desde Excel o agregarlos manualmente.
+
+La configuración exportada de Firebase se conserva y la app intenta sincronizar la bitácora con ese proyecto. Las reglas incluidas permiten leer y modificar registros sin autenticación; antes de desplegar o usar datos operativos, restringe el acceso y configura autenticación y reglas apropiadas.

@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "SavingsRecord": {
+      "title": "SavingsRecord",
+      "description": "Registro de ahorro de combustible por vuelo de Flyzar",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID único del registro",
+          "maxLength": 128
+        },
+        "dateStr": {
+          "type": "string",
+          "description": "Fecha del vuelo",
+          "maxLength": 32
+        },
+        "registration": {
+          "type": "string",
+          "description": "Matrícula de la aeronave",
+          "maxLength": 32
+        },
+        "flightNumber": {
+          "type": "string",
+          "description": "Número de vuelo opcional",
+          "maxLength": 32
+        },
+        "route": {
+          "type": "string",
+          "description": "Ruta del vuelo",
+          "maxLength": 128
+        },
+        "extraUSG": {
+          "type": "number",
+          "description": "Galones de combustible tankereados"
+        },
+        "extraLbs": {
+          "type": "number",
+          "description": "Libras de combustible tankereadas"
+        },
+        "extraLts": {
+          "type": "number",
+          "description": "Litros de combustible tankereados"
+        },
+        "totalSavingsUSD": {
+          "type": "number",
+          "description": "Ahorro total calculado en USD"
+        },
+        "useCarryCost": {
+          "type": "boolean",
+          "description": "Indica si se aplicó penalización por acarreo"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notas u observaciones",
+          "maxLength": 500
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Fecha y hora ISO de creación",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "dateStr", "registration", "route", "extraUSG", "totalSavingsUSD"]
+    }
+  },
+  "firestore": {
+    "/savings_records/{recordId}": {
+      "schema": "SavingsRecord",
+      "description": "Colección compartida de registros de ahorro de combustible de Flyzar"
+    }
+  }
+}

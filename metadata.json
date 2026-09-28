@@ -1,0 +1,6 @@
+{
+  "name": "Flyzar Ops",
+  "description": "Herramienta de operaciones Flyzar para cálculos de combustible, bitácora de tankering y generación de GENDEC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
